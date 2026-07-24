@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Detection Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+🛡 Cloud Security AI
+</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+</div>
+
+</div>
+
+<div class="dashboard">
+
+<h1>Detection Result</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>Total Logs</h2>
+<h1>{{ total_logs }}</h1>
+</div>
+
+<div class="card">
+<h2>Normal Logs</h2>
+<h1 style="color:#00ff95;">{{ normal_logs }}</h1>
+</div>
+
+<div class="card">
+<h2>Anomaly Logs</h2>
+<h1 style="color:#ff4d4d;">{{ anomaly_logs }}</h1>
+</div>
+
+<div class="card">
+<h2>Risk Level</h2>
+
+{% if risk=="Low" %}
+<h1 style="color:#00ff95;">Low</h1>
+
+{% elif risk=="Medium" %}
+<h1 style="color:orange;">Medium</h1>
+
+{% else %}
+<h1 style="color:red;">High</h1>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<div class="upload-box">
+
+<h2>Detection Analytics</h2>
+
+<canvas id="pieChart"></canvas>
+
+<br><br>
+
+<div style="overflow-x:auto;">
+
+    <input
+type="text"
+id="searchInput"
+placeholder="🔍 Search in results..."
+style="width:100%;padding:12px;margin-bottom:20px;border-radius:8px;border:none;font-size:16px;">
+
+
+
+<div class="card mt-4">
+    <h2>🤖 AI Security Report</h2>
+
+    <div class="ai-report">
+        <pre>{{ ai_report }}</pre>
+    </div>
+</div>
+
+<br>
+
+
+{{ table|safe }}
+
+</div>
+
+<br>
+
+<a href="/download">
+<button>
+📥 Download Result CSV
+</button>
+</a>
+
+<br><br>
+
+<a href="/">
+<button>
+⬅ Upload Another File
+</button>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+©️ 2026 Cloud Security AI |
+Machine Learning Based Threat Detection
+
+</footer>
+
+<script>
+
+const normal={{ normal_logs }};
+const anomaly={{ anomaly_logs }};
+
+new Chart(document.getElementById("pieChart"),{
+
+type:"pie",
+
+data:{
+
+labels:["Normal","Anomaly"],
+
+datasets:[{
+
+data:[normal,anomaly],
+
+backgroundColor:[
+"#00ff95",
+"#ff4d4d"
+]
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+labels:{
+color:"white"
+}
+
+}
+
+}
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

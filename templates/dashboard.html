@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cloud Security Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+
+🛡 Cloud Security AI
+
+</div>
+
+<div class="nav-links">
+
+<a href="/">Home</a>
+
+<a href="/dashboard">Dashboard</a>
+
+</div>
+
+</div>
+
+<div class="dashboard">
+
+<h1>Cloud Security Analytics Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Total Logs</h2>
+
+<p>10</p>
+
+</div>
+
+<div class="card">
+
+<h2>Normal Logs</h2>
+
+<p>8</p>
+
+</div>
+
+<div class="card">
+
+<h2>Anomalies</h2>
+
+<p>2</p>
+
+</div>
+
+<div class="card">
+
+<h2>Risk Level</h2>
+
+<p style="color:red;">High</p>
+
+</div>
+
+</div>
+
+<div class="upload-box">
+
+<h2>Upload Cloud Log File</h2>
+
+<br>
+
+<form action="/detect" method="POST" enctype="multipart/form-data">
+
+<input type="file"
+name="file"
+accept=".csv"
+required>
+
+<br><br>
+
+<button type="submit">
+
+🚀 Detect Anomalies
+
+</button>
+
+</form>
+
+</div>
+
+<br><br>
+
+<div class="card">
+
+<h2>AI Security Recommendations</h2>
+
+<br>
+
+<ul style="text-align:left;line-height:35px;">
+
+<li>Enable Multi-Factor Authentication (MFA)</li>
+
+<li>Monitor failed login attempts</li>
+
+<li>Restrict suspicious IP addresses</li>
+
+<li>Rotate compromised credentials</li>
+
+<li>Enable firewall monitoring</li>
+
+<li>Review abnormal network traffic</li>
+
+</ul>
+
+</div>
+
+<br><br>
+
+<div class="card">
+
+<h2>System Status</h2>
+
+<br>
+
+<p>
+
+✅ Machine Learning Model Loaded Successfully
+
+</p>
+
+<br>
+
+<p>
+
+✅ Isolation Forest Algorithm Active
+
+</p>
+
+<br>
+
+<p>
+
+✅ Ready for Real-Time Detection
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+©️ 2026 Cloud Security AI | Developed using Flask & Machine Learning
+
+</footer>
+
+</body>
+
+</html>

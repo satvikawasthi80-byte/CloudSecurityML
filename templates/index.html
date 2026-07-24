@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Security AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            🛡 Cloud Security AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+
+    </div>
+
+    <div class="dashboard">
+
+        <h1>
+            Machine Learning Based Cloud Security
+        </h1>
+
+        <p class="subtitle">
+            Upload Cloud Logs (.CSV) and Detect Security Anomalies using Isolation Forest
+        </p>
+
+        <div class="upload-box">
+
+            <form action="/detect"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <input
+                    type="file"
+                    name="file"
+                    accept=".csv"
+                    required>
+
+                <br><br>
+
+                <button type="submit">
+                    🔍 Detect Anomalies
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>Algorithm</h2>
+                <p>Isolation Forest</p>
+            </div>
+
+            <div class="card">
+                <h2>ML Model</h2>
+                <p>Active</p>
+            </div>
+
+            <div class="card">
+                <h2>Input</h2>
+                <p>CSV Log File</p>
+            </div>
+
+            <div class="card">
+                <h2>Status</h2>
+                <p style="color:#00ff95;">
+                    Ready
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        ©️ 2026 Cloud Security AI |
+        Machine Learning Based Anomaly Detection
+
+    </footer>
+
+</body>
+
+</html>

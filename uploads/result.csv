@@ -1,0 +1,11 @@
+CPU_Usage,Memory_Usage,Network_Traffic,Failed_Logins,Response_Time,Prediction
+92,93,9500,45,1500,Anomaly
+97,98,11000,60,1800,Anomaly
+88,90,8700,38,1400,Anomaly
+95,96,12000,75,2100,Anomaly
+99,99,15000,90,2500,Anomaly
+90,91,9800,50,1650,Anomaly
+94,95,10500,58,1750,Anomaly
+96,97,13000,82,2200,Anomaly
+91,92,9900,47,1550,Anomaly
+98,99,14500,88,2400,Anomaly
